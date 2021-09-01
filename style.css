@@ -1,0 +1,360 @@
+:root {
+  --soft-cyan: hsl(174, 77%, 80%);
+  --strong-cyan: hsl(174, 86%, 45%);
+  --discount-bg: hsl(14, 92%, 95%);
+  --discount-text: hsl(15, 100%, 70%);
+  --btn-color: hsl(226, 100%, 87%);
+  --white: hsl(0, 0%, 100%);
+  --main-bg: hsl(230, 100%, 99%);
+  --ligh-grayish-blue: hsl(224, 65%, 95%);
+  --toggle-bg: hsl(223, 50%, 87%);
+  --grayish-blue: hsl(225, 20%, 60%);
+  --dark-blue: hsl(227, 35%, 25%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  background-image: url("images/bg-pattern.svg");
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 375px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+header {
+  margin-top: 70px;
+  padding: 50px 0;
+  text-align: center;
+  background-image: url("/images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header h1 {
+  font-size: 24px;
+  color: var(--dark-blue);
+}
+
+header p {
+  font-size: 16px;
+  color: var(--grayish-blue);
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  position: static;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.page-views,
+.tarrif-views
+ {
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  font-size: 16px;
+  color: var(--grayish-blue);
+}
+
+.price {
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--dark-blue);
+}
+
+.month {
+  color: var(--grayish-blue);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.tarrif {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.price {
+  margin: 15px 0;
+}
+
+.progress-bar {
+  text-align: center;
+}
+
+.discount-text {
+  display: none;
+}
+
+.progress {
+  width: 100%;
+  margin-left: 25px;
+}
+
+.progress-bar-mobile {
+  margin: 30px 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--strong-cyan);
+  background-image: url("./images/icon-slider.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  cursor: pointer;
+  /* margin-top: -20px; You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--strong-cyan);
+  background-image: url("./images/icon-slider.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  cursor: pointer;
+}
+
+input.myrange {
+  width: 100%;
+  height: 10.4px;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(234, 238, 251) 60%,
+    rgb(234, 238, 251) 60%
+  );
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 10.4px;
+  cursor: pointer;
+  background: var(--ligh-grayish-blue);
+  border-radius: 5px;
+}
+.monthly {
+  display: flex;
+  justify-content: center;
+}
+
+.monthly span {
+  text-transform: capitalize;
+  color: var(--grayish-blue);
+  font-weight: 600;
+  font-size: 12px;
+}
+.switch {
+  margin: 0 10px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  outline: none;
+  width: 40px;
+  height: 20px;
+  background-color: var(--ligh-grayish-blue);
+  border-radius: 25px;
+  position: relative;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+  height: 15px;
+  width: 15px;
+  background-color: var(--white);
+  border-radius: 50px;
+}
+
+input:checked {
+  background-color: var(--strong-cyan);
+}
+
+input:checked:before {
+  transform: translate(100%);
+}
+
+.discount {
+  background-color: var(--discount-bg);
+  color: var(--discount-text) !important;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 20px;
+  position: relative;
+  left: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background-color: var(--ligh-grayish-blue);
+  border: none;
+  margin: 20px 0;
+}
+.start {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--grayish-blue);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: capitalize;
+  list-style-image: url("./images/icon-check.svg");
+}
+
+.start ul li {
+  margin-bottom: 10px;
+}
+
+.cta-btn {
+  margin: 30px 0;
+  border: none;
+  background-color: var(--dark-blue);
+  padding: 15px 30px;
+  border-radius: 20px;
+  color: var(--btn-color);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1.1px;
+  cursor: pointer;
+}
+
+.progress-bar-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 906px) {
+  .container {
+    max-width: 550px;
+  }
+
+  .brk-word {
+    display: none;
+  }
+
+  aside {
+    margin-top: 50px;
+  }
+
+  .tarrif {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .progress-bar-mobile {
+    display: none;
+  }
+
+  .progress-bar-desktop {
+    display: unset;
+    margin: 30px 0px;
+  }
+
+  .progress {
+    margin-left: unset;
+    padding: 0 20px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    margin: 30px 0px;
+  }
+
+  .monthly {
+    margin-left: 95px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .discount-text {
+    display: unset;
+    color: var(--discount-text) !important;
+    text-transform: lowercase !important;
+  }
+
+  .start {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-size:contain ;
+  }
+}
+/* ---------------------------------------------------------- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Simple, traffic-based pricing</h1>
+        <p>
+          Sign-up for our 30-day trial, <br class="brk-word" />
+          No credit card required.
+        </p>
+      </header>
+      <aside>
+        <!-- price bar monthly or yearly price -->
+        <div class="tarrif">
+          <div class="tarrif-views"><span class="page-views">10k</span> pageviews</div>
+          <div class="progress-bar-mobile">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="25"
+              value="0"
+              class="myrange"
+            />
+          </div>
+          <div class="price">
+            <span>$<span class="pricefix">8</span>.00</span>
+            <span class="month"> / month</span>
+          </div>
+        </div>
+        <!-- progress bar -->
+        <div class="progress">
+          <div class="progress-bar-desktop">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="25"
+              value="0"
+              class="myrange"
+            />
+          </div>
+          <!-- switched between month and year  -->
+          <div class="monthly">
+            <span> Monthly Billing</span>
+            <label class="switch">
+              <input type="checkbox" id="switch" onclick="yearlyFare(8)"/>
+              <span class="slider"></span>
+            </label>
+            <span>Yearly Billing </span>
+            <span class="discount">
+              -25% <span class="discount-text">discount</span></span
+            >
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- feautures  -->
+        <div class="start">
+          <ul>
+            <li>Unlimited websites</li>
+            <li>100% data ownership</li>
+            <li>Email reports</li>
+          </ul>
+          <button class="cta-btn">Start my trial</button>
+        </div>
+      </aside>
+    </main>
+    <script src="/script.js"></script>
+  </body>
+</html>
